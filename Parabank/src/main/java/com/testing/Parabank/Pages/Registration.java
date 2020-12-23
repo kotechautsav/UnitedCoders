@@ -2,18 +2,25 @@ package com.testing.Parabank.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-//import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import com.testing.Parabank.TestBase.DriverSetup;
 
 public class Registration {
 
 	static WebDriver driver;
-	
-	public static void Register() throws Exception {
+	@Test
+	public static String register() {
 		
 		driver=DriverSetup.invokeDriver("ChromeDriver_WindowsOS");
-		driver.get("https://parabank.parasoft.com/parabank/register.htm");
+		driver.get("https://parabank.parasoft.com/parabank");
+		driver.findElement(By.linkText("Register")).click();
+		
+		WebDriverWait Wait = new WebDriverWait(driver,30);
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
+		
 		driver.findElement(By.id("customer.firstName")).sendKeys("Rahul");
 		driver.findElement(By.id("customer.lastName")).sendKeys("Dravid");
 		driver.findElement(By.id("customer.address.street")).sendKeys("charminar");
@@ -26,8 +33,12 @@ public class Registration {
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
 		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
-		Thread.sleep(5000);
-		driver.quit();
+		
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id=\\\"rightPanel\\\"]/p")));
+		
+		String actualResult = driver.findElement(By.xpath("//div[@id=\"rightPanel\"]/p")).getText();
+		return actualResult;
+		
 	}
 	
 	
