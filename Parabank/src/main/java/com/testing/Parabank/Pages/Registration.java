@@ -1,18 +1,20 @@
 package com.testing.Parabank.Pages;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
+
 
 import com.testing.Parabank.TestBase.DriverSetup;
+import com.testing.Parabank.Utils.ReadingExcel;
 
 public class Registration {
 
 	static WebDriver driver;
+	static XSSFSheet sheet=ReadingExcel.getDataFromExcel();
 
-	@Test
 	public static String register() {
 
 		driver = DriverSetup.invokeDriver("ChromeDriver_WindowsOS");
@@ -340,7 +342,7 @@ public class Registration {
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
 		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hl123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
 		String actualResult = driver.findElement(By.id("repeatedPassword.errors")).getText();
