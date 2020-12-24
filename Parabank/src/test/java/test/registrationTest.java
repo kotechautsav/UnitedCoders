@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import com.testing.Parabank.Pages.Registration;
 
-public class registrationTest {
+public class registrationTest extends Registration{
 	@Test(priority=1)
 	public static void validRegistration() {
 
@@ -14,6 +14,7 @@ public class registrationTest {
 		
 		Assert.assertEquals(success, "Your account was created successfully. You are now logged in.");
 		Assert.assertEquals(noPhoneNumber, "Your account was created successfully. You are now logged in.");
+		
 	}
     @Test(priority=2)
 	public static void invalidRegistration() {
@@ -34,13 +35,13 @@ public class registrationTest {
 		Assert.assertEquals(lastnameErr, "Last name is required.");
 		Assert.assertEquals(addressErr, "Address is required.");
 		Assert.assertEquals(cityErr, "City is required.");
-		Assert.assertEquals(stateErr, "State is required");
-		Assert.assertEquals(zipcodeErr, "Zip Code is required");
+		Assert.assertEquals(stateErr, "State is required.");
+		Assert.assertEquals(zipcodeErr, "Zip Code is required.");
 		Assert.assertEquals(ssnErr, "Social Security Number is required.");
 		Assert.assertEquals(usernameErr, "Username is required.");
 		Assert.assertEquals(passwordErr, "Password is required.");
 		Assert.assertEquals(passwordConfirmErr, "Password confirmation is required.");
-		Assert.assertEquals(passwordmismatchErr, "Passwords did not match");
+		Assert.assertEquals(passwordmismatchErr, "Passwords did not match.");
 
 	}
 }

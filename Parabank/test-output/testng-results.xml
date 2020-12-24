@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="45365" started-at="2020-12-24T13:42:46Z" finished-at="2020-12-24T13:43:32Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="45365" started-at="2020-12-24T13:42:46Z" finished-at="2020-12-24T13:43:32Z">
+      <class name="test.registrationTest">
+        <test-method status="PASS" signature="validRegistration()[pri:0, instance:test.registrationTest@1752059]" name="validRegistration" duration-ms="24333" started-at="2020-12-24T19:12:46Z" finished-at="2020-12-24T19:13:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validRegistration -->
+        <test-method status="PASS" signature="invalidRegistration()[pri:0, instance:test.registrationTest@1752059]" name="invalidRegistration" duration-ms="21016" started-at="2020-12-24T19:13:11Z" finished-at="2020-12-24T19:13:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidRegistration -->
+      </class> <!-- test.registrationTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

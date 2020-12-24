@@ -17,11 +17,11 @@ public class Registration {
 
 	public static String register() {
 
-		driver = DriverSetup.invokeDriver("ChromeDriver_WindowsOS");
+		driver = DriverSetup.invokeDriver("FirefoxDriver_WindowsOS");
 		driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Register")).click();
 
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
+		WebDriverWait Wait = new WebDriverWait(driver, 50);
 		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
 
 		driver.findElement(By.id("customer.firstName")).sendKeys("Rahul");
@@ -32,14 +32,16 @@ public class Registration {
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("Bahudravid@123");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
-		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.xpath("//input[@value='Register']")).click();
 
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id=\\\"rightPanel\\\"]/p")));
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='rightPanel']/p")));
 
-		String actualResult = driver.findElement(By.xpath("//div[@id=\"rightPanel\"]/p")).getText();
+		String actualResult = driver.findElement(By.xpath("//div[@id='rightPanel']/p")).getText();
+		driver.findElement(By.xpath("//a[contains(text(),\"Log Out\")]")).click();
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Register")));
 		return actualResult;
 
 	}
@@ -60,9 +62,9 @@ public class Registration {
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("Rahul@23");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
 		String actualResult = driver.findElement(By.id("customer.firstName.errors")).getText();
@@ -86,9 +88,9 @@ public class Registration {
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("Rahul@13");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
 		String actualResult = driver.findElement(By.id("customer.lastName.errors")).getText();
@@ -111,9 +113,9 @@ public class Registration {
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("Rahul@12");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
 		String errMessage = driver.findElement(By.id("customer.address.street.errors")).getText();
@@ -136,9 +138,9 @@ public class Registration {
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("ahul@123");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
 		String actualResult = driver.findElement(By.id("customer.address.city.errors")).getText();
@@ -161,9 +163,9 @@ public class Registration {
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("Rhul@123");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
 		String actualResult = driver.findElement(By.id("customer.address.state.errors")).getText();
@@ -186,12 +188,12 @@ public class Registration {
 		driver.findElement(By.id("customer.address.state")).sendKeys("Andhra pradesh");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("Raul@123");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
-		String actualResult = driver.findElement(By.id("customer.address.zipcode.errors")).getText();
+		String actualResult = driver.findElement(By.id("customer.address.zipCode.errors")).getText();
 		return actualResult;
 
 	}
@@ -201,7 +203,7 @@ public class Registration {
 		driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Register")).click();
 
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
+		WebDriverWait Wait = new WebDriverWait(driver, 50);
 		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
 
 		driver.findElement(By.id("customer.firstName")).sendKeys("Rahul");
@@ -211,14 +213,15 @@ public class Registration {
 		driver.findElement(By.id("customer.address.state")).sendKeys("Andhra pradesh");
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("Rahl@123");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id=\\\"rightPanel\\\"]/p")));
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='rightPanel']/p")));
 
-		String actualResult = driver.findElement(By.xpath("//div[@id=\"rightPanel\"]/p")).getText();
+		String actualResult = driver.findElement(By.xpath("//div[@id='rightPanel']/p")).getText();
+		driver.findElement(By.xpath("//a[contains(text(),\"Log Out\")]")).click();
 		return actualResult;
 
 	}
@@ -238,9 +241,9 @@ public class Registration {
 		driver.findElement(By.id("customer.address.state")).sendKeys("Andhra pradesh");
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("Rahu@123");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
 		String actualResult = driver.findElement(By.id("customer.ssn.errors")).getText();
@@ -265,7 +268,7 @@ public class Registration {
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
 		String actualResult = driver.findElement(By.id("customer.username.errors")).getText();
@@ -289,8 +292,8 @@ public class Registration {
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hul123");
+		driver.findElement(By.id("customer.username")).sendKeys("Rahul23");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
 		String actualResult = driver.findElement(By.id("customer.password.errors")).getText();
@@ -314,11 +317,11 @@ public class Registration {
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("hul@123");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
-		String actualResult = driver.findElement(By.id("customer.repeatedPassword.errors")).getText();
+		String actualResult = driver.findElement(By.id("repeatedPassword.errors")).getText();
 		return actualResult;
 
 	}
@@ -340,9 +343,9 @@ public class Registration {
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahul@123");
+		driver.findElement(By.id("customer.username")).sendKeys("Rahul");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
-		driver.findElement(By.id("customer.repeatedPassword")).sendKeys("R@hl123");
+		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hl123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();
 
 		String actualResult = driver.findElement(By.id("repeatedPassword.errors")).getText();
