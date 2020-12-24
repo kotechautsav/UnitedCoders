@@ -1,4 +1,8 @@
 activeProfiles=
 eclipse.preferences.version=1
+<<<<<<< HEAD
 resolveWorkspaceProjects=false
+=======
+resolveWorkspaceProjects=true
+>>>>>>> branch 'main' of https://github.com/UnitedCoders2020/UnitedCoders
 version=1

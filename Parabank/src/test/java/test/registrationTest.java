@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.testing.Parabank.Pages.Registration;
 
 public class registrationTest {
-	@Test
+	@Test(priority=1)
 	public static void validRegistration() {
 
 		String success = Registration.register();
@@ -15,7 +15,7 @@ public class registrationTest {
 		Assert.assertEquals(success, "Your account was created successfully. You are now logged in.");
 		Assert.assertEquals(noPhoneNumber, "Your account was created successfully. You are now logged in.");
 	}
-
+    @Test(priority=2)
 	public static void invalidRegistration() {
 
 		String firstnameErr = Registration.firstnameError();
