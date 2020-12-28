@@ -4,6 +4,8 @@ package com.testing.Parabank.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.testing.Parabank.Pages.TransferAmount;
+
 public class BaseClass {
 	private static WebDriver driver;
 	private static String url = "https://parabank.parasoft.com/parabank/index.htm";
@@ -19,7 +21,7 @@ public class BaseClass {
 		driver.manage().window().maximize();
 	}
 	public static void login(WebDriver driver) {
-		driver.findElement(By.name("username")).sendKeys("tanmoydebnath2020");
+		driver.findElement(By.name("username")).sendKeys("helloWorld123");
 		driver.findElement(By.name("password")).sendKeys("kofwing2031");
 		driver.findElement(By.xpath("//input[@class='button']")).click();
 	}
@@ -27,10 +29,12 @@ public class BaseClass {
 		driver.close();
 		driver.quit();
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		WebDriver driver = getDriver();
 		navigation(driver);
 		login(driver);
+		String meString = TransferAmount.transferringFunds(driver);
+		System.out.println(meString);
 		closingDriver(driver);
 	}
 }
