@@ -15,7 +15,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
-			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -24,7 +23,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/KIIT/Documents/COGNIZANT/jar files/selenium-java-3.141.59 (1)/client-combined-3.141.59.jar"/>
-	<classpathentry kind="lib" path="C:/Users/KIIT/Documents/COGNIZANT/jar files/selenium-java-3.141.59 (1)/client-combined-3.141.59-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/873397/eclipse-workspace/selenium/selenium-java-3.141.59/client-combined-3.141.59.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

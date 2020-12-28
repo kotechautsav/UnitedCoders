@@ -2,19 +2,23 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="45365" started-at="2020-12-24T13:42:46Z" finished-at="2020-12-24T13:43:32Z">
+  <suite name="Default suite" duration-ms="55208" started-at="2020-12-28T05:41:04Z" finished-at="2020-12-28T05:41:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="45365" started-at="2020-12-24T13:42:46Z" finished-at="2020-12-24T13:43:32Z">
+    <test name="Default test" duration-ms="55208" started-at="2020-12-28T05:41:04Z" finished-at="2020-12-28T05:41:59Z">
       <class name="test.registrationTest">
-        <test-method status="PASS" signature="validRegistration()[pri:0, instance:test.registrationTest@1752059]" name="validRegistration" duration-ms="24333" started-at="2020-12-24T19:12:46Z" finished-at="2020-12-24T19:13:11Z">
+        <test-method status="PASS" signature="validRegistration()[pri:0, instance:test.registrationTest@136d012]" name="validRegistration" duration-ms="32932" started-at="2020-12-28T11:11:04Z" finished-at="2020-12-28T11:11:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validRegistration -->
-        <test-method status="PASS" signature="invalidRegistration()[pri:0, instance:test.registrationTest@1752059]" name="invalidRegistration" duration-ms="21016" started-at="2020-12-24T19:13:11Z" finished-at="2020-12-24T19:13:32Z">
+        <test-method status="PASS" signature="invalidRegistration()[pri:0, instance:test.registrationTest@136d012]" name="invalidRegistration" duration-ms="21333" started-at="2020-12-28T11:11:37Z" finished-at="2020-12-28T11:11:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidRegistration -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:test.registrationTest@136d012]" name="closeBrowser" is-config="true" duration-ms="927" started-at="2020-12-28T11:11:58Z" finished-at="2020-12-28T11:11:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
       </class> <!-- test.registrationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

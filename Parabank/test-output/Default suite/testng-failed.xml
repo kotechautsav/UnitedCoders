@@ -5,7 +5,6 @@
     <classes>
       <class name="test.registrationTest">
         <methods>
-          <include name="invalidRegistration"/>
           <include name="validRegistration"/>
         </methods>
       </class> <!-- test.registrationTest -->

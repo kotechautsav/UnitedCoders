@@ -32,7 +32,7 @@ public class Registration {
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.phoneNumber")).sendKeys("9876543210");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Bahudravid@123");
+		driver.findElement(By.id("customer.username")).sendKeys("222dravid@123");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
 		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
@@ -213,7 +213,7 @@ public class Registration {
 		driver.findElement(By.id("customer.address.state")).sendKeys("Andhra pradesh");
 		driver.findElement(By.id("customer.address.zipCode")).sendKeys("222143");
 		driver.findElement(By.id("customer.ssn")).sendKeys("332-25-45617");
-		driver.findElement(By.id("customer.username")).sendKeys("Rahl@123");
+		driver.findElement(By.id("customer.username")).sendKeys("Vishalpandey@123");
 		driver.findElement(By.id("customer.password")).sendKeys("R@hul123");
 		driver.findElement(By.id("repeatedPassword")).sendKeys("R@hul123");
 		driver.findElement(By.xpath("//input[@value=\"Register\"]")).click();

@@ -11,16 +11,16 @@ public class ExtendReport {
 	public static ExtentReports getReportInstance(){
 		
 		if(report == null){
-			String reportName = DateUtils.getTimeStamp() + ".html";
-			ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter( System.getProperty("user.dir")+"/ReportOutputs/" + reportName);
+			//String reportName = DateUtils.getTimeStamp() + ".html";
+			ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter( System.getProperty("user.dir")+"\\ReportOutputs\\htmlReport.html");
 			report =  new ExtentReports();
 			report.attachReporter(htmlReporter);
 			
 			report.setSystemInfo("OS", "Windows 10");
 			report.setSystemInfo("Environment", "UAT");
 			report.setSystemInfo("Build Number", "10.8.1");
-			report.setSystemInfo("Browser", "Chrome");
-			
+			report.setSystemInfo("Browser", "Chrome,Firefox");
+			//tanmoy comment
 			//ExtentHtmlReport
 			htmlReporter.config().setDocumentTitle("Automation Results");
 			htmlReporter.config().setReportName("Test Report");
