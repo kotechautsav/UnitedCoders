@@ -31,6 +31,6 @@ public class BaseClass {
 		WebDriver driver = getDriver();
 		navigation(driver);
 		login(driver);
-		
+		closingDriver(driver);
 	}
 }
