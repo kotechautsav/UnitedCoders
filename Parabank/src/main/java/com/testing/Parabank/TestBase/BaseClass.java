@@ -25,16 +25,6 @@ public class BaseClass {
 		driver.findElement(By.name("password")).sendKeys("kofwing2031");
 		driver.findElement(By.xpath("//input[@class='button']")).click();
 	}
-	public static void closingDriver(WebDriver driver){
-		driver.close();
-		driver.quit();
-	}
-	public static void main(String[] args) throws Exception {
-		WebDriver driver = getDriver();
-		navigation(driver);
-		login(driver);
-		String meString = TransferAmount.transferringFunds(driver);
-		System.out.println(meString);
-		closingDriver(driver);
-	}
+	
+	
 }

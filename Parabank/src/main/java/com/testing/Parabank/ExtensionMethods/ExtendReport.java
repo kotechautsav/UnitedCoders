@@ -20,7 +20,6 @@ public class ExtendReport {
 			report.setSystemInfo("Environment", "UAT");
 			report.setSystemInfo("Build Number", "10.8.1");
 			report.setSystemInfo("Browser", "Chrome,Firefox");
-			//tanmoy comment
 			//ExtentHtmlReport
 			htmlReporter.config().setDocumentTitle("Automation Results");
 			htmlReporter.config().setReportName("Test Report");

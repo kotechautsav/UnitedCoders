@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Test">
-   <test name="registration">
+   <test name="transfer">
       <classes>
-      	<class name="test.registrationTest"/>
+      	<class name="test.TransferAmountTest"/>
       </classes>
      </test>
 </suite>
