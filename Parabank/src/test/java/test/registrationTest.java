@@ -9,7 +9,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.testing.Parabank.ExtensionMethods.ExtendReport;
 import com.testing.Parabank.Pages.Registration;
-import com.testing.Parabank.TestBase.DriverSetup;
 
 
 
@@ -26,10 +25,10 @@ public class registrationTest extends Registration{
 		String noPhoneNumber = Registration.withoutPhonenumberRegister();
 		
 		Assert.assertEquals(success, "Your account was created successfully. You are now logged in.");
-		logger.log(Status.PASS, "Registration successfull with valid inputs.");
+		logger.log(Status.INFO, "Registration successfull with valid inputs.");
 		Assert.assertEquals(noPhoneNumber, "Your account was created successfully. You are now logged in.");
-		logger.log(Status.PASS, "Registration successfull without phone number.");
-		
+		logger.log(Status.INFO, "Registration successfull without phone number.");
+		logger.log(Status.PASS, "Valid registration done.");
 	}
     @Test(priority=2)
 	public static void invalidRegistration() {
@@ -49,31 +48,32 @@ public class registrationTest extends Registration{
 		String passwordmismatchErr = Registration.passwordMismatchError();
 
 		Assert.assertEquals(firstnameErr, "First name is required.");
-		logger.log(Status.PASS, "First name error message verified.");
+		logger.log(Status.INFO, "First name error message verified.");
 		Assert.assertEquals(lastnameErr, "Last name is required.");
-		logger.log(Status.PASS, "Last name error message verified.");
+		logger.log(Status.INFO, "Last name error message verified.");
 		Assert.assertEquals(addressErr, "Address is required.");
-		logger.log(Status.PASS, "Address error message verified.");
+		logger.log(Status.INFO, "Address error message verified.");
 		Assert.assertEquals(cityErr, "City is required.");
-		logger.log(Status.PASS, "City error message verified.");
+		logger.log(Status.INFO, "City error message verified.");
 		Assert.assertEquals(stateErr, "State is required.");
-		logger.log(Status.PASS, "State error message verified.");
+		logger.log(Status.INFO, "State error message verified.");
 		Assert.assertEquals(zipcodeErr, "Zip Code is required.");
-		logger.log(Status.PASS, "Zip code error message verified.");
+		logger.log(Status.INFO, "Zip code error message verified.");
 		Assert.assertEquals(ssnErr, "Social Security Number is required.");
-		logger.log(Status.PASS, "SSN error message verified.");
+		logger.log(Status.INFO, "SSN error message verified.");
 		Assert.assertEquals(usernameErr, "Username is required.");
-		logger.log(Status.PASS, "Username error message verified.");
+		logger.log(Status.INFO, "Username error message verified.");
 		Assert.assertEquals(passwordErr, "Password is required.");
-		logger.log(Status.PASS, "Password error message verified.");
+		logger.log(Status.INFO, "Password error message verified.");
 		Assert.assertEquals(passwordConfirmErr, "Password confirmation is required.");
-		logger.log(Status.PASS, "Confirm password error message verified.");
+		logger.log(Status.INFO, "Confirm password error message verified.");
 		Assert.assertEquals(passwordmismatchErr, "Passwords did not match.");
-		logger.log(Status.PASS, "Matching password error message verified.");
+		logger.log(Status.INFO, "Matching password error message verified.");
 
+		logger.log(Status.PASS, "Invalid registration error message is recieved.");
 	}
-    @AfterClass
+   /* @AfterClass
 	public static void closeBrowser() {
 		report.flush();
-	}
+	}*/
 }

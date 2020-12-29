@@ -51,9 +51,9 @@ public class updateinfoTest extends UpdateInfo {
 
 	}
 
-	@AfterClass
+	/*@AfterClass
 	public static void closeBrowser() {
 		report.flush();
-	}
+	}*/
 
 }
