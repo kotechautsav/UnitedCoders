@@ -26,7 +26,7 @@ public class TransferAmountTest extends TransferAmount{
 	
 	
 	//Extent report
-	public static ExtentReports report = ExtendReport.getReportInstance();
+	public static ExtentReports report = ExtendReport.report;
 	public static ExtentTest test;
 	
     //Method invoking the browser depending on platform requirements.
@@ -34,13 +34,13 @@ public class TransferAmountTest extends TransferAmount{
 	public static WebDriver getWebDriver() throws Exception {
 		
 		test = report.createTest("Transferring Amount");
-		test.log(Status.INFO, "Opening the Browser");
+		//test.log(Status.INFO, "Opening the Browser");
 		
     	//Browser Choices
     	
 		
 		//Enter your browser choice in between the inverted Commas
-		driver=DriverSetup.invokeDriver("ChromeDriver_WindowsOS");
+		driver=DriverSetup.driver;//.invokeDriver("ChromeDriver_WindowsOS");
 		test.log(Status.PASS, "Browser Opened");
 		return driver;
 		
@@ -49,10 +49,10 @@ public class TransferAmountTest extends TransferAmount{
 	//Complete Transfer Amount operation
 	@Test
 	public static void transferringAmount() throws Exception {
-		test.log(Status.INFO, "Logging in");
-		BaseClass.navigation(driver);
-		BaseClass.login(driver);
-		test.log(Status.PASS, "Login Successful");
+		//test.log(Status.INFO, "Logging in");
+		//BaseClass.navigation(driver);
+		//BaseClass.login(driver);
+		//test.log(Status.PASS, "Login Successful");
 		test.log(Status.INFO, "Starting the transfer");
 		String ssString = TransferAmount.transferringFunds(driver);
 		test.log(Status.PASS, ssString);
@@ -71,7 +71,7 @@ public class TransferAmountTest extends TransferAmount{
 	
 	
 	//Closing the application
-	@AfterMethod
+	/*@AfterMethod
 	public static void closeApplication(){
 		
 		test.log(Status.INFO, "Closing the browser");
@@ -79,7 +79,7 @@ public class TransferAmountTest extends TransferAmount{
 		driver.quit();
 		report.flush();
 		test.log(Status.PASS, "Closed browser successfully");
-	}
+	}*/
 	
 	
 	

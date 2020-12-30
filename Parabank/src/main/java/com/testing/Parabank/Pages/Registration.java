@@ -40,7 +40,7 @@ public class Registration {
 		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='rightPanel']/p")));
 
 		String actualResult = driver.findElement(By.xpath("//div[@id='rightPanel']/p")).getText();
-		driver.findElement(By.xpath("//a[contains(text(),\"Log Out\")]")).click();
+		driver.findElement(By.linkText("Log Out")).click();
 		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Register")));
 		return actualResult;
 

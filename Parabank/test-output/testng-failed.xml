@@ -1,13 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [ParabankWebsiteTest]">
+  <test name="FunctionalTesting(failed)">
     <classes>
+      <class name="com.testing.Parabank.TestBase.DriverSetup">
+        <methods>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- com.testing.Parabank.TestBase.DriverSetup -->
+      <class name="com.testing.Parabank.ExtensionMethods.ExtendReport">
+        <methods>
+          <include name="flushReport"/>
+          <include name="flushReport"/>
+        </methods>
+      </class> <!-- com.testing.Parabank.ExtensionMethods.ExtendReport -->
+      <class name="test.updateinfoTest">
+        <methods>
+          <include name="validUpdate"/>
+        </methods>
+      </class> <!-- test.updateinfoTest -->
+      <class name="test.TransferAmountTest">
+        <methods>
+          <include name="getWebDriver"/>
+        </methods>
+      </class> <!-- test.TransferAmountTest -->
+      <class name="com.testing.Parabank.Utils.ReadingExcel">
+        <methods>
+          <include name="closeWorkbook"/>
+        </methods>
+      </class> <!-- com.testing.Parabank.Utils.ReadingExcel -->
+    </classes>
+  </test> <!-- FunctionalTesting(failed) -->
+  <test name="SmokeTesting(failed)">
+    <classes>
+      <class name="com.testing.Parabank.TestBase.DriverSetup">
+        <methods>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- com.testing.Parabank.TestBase.DriverSetup -->
+      <class name="com.testing.Parabank.ExtensionMethods.ExtendReport">
+        <methods>
+          <include name="flushReport"/>
+          <include name="flushReport"/>
+        </methods>
+      </class> <!-- com.testing.Parabank.ExtensionMethods.ExtendReport -->
+      <class name="test.TransferAmountTest">
+        <methods>
+          <include name="getWebDriver"/>
+        </methods>
+      </class> <!-- test.TransferAmountTest -->
       <class name="test.registrationTest">
         <methods>
           <include name="validRegistration"/>
         </methods>
       </class> <!-- test.registrationTest -->
+      <class name="com.testing.Parabank.Utils.ReadingExcel">
+        <methods>
+          <include name="closeWorkbook"/>
+        </methods>
+      </class> <!-- com.testing.Parabank.Utils.ReadingExcel -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- SmokeTesting(failed) -->
+</suite> <!-- Failed suite [ParabankWebsiteTest] -->

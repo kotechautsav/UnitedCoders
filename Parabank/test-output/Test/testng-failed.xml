@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Test]">
-  <test name="registration(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Test]">
+  <test name="transfer(failed)">
     <classes>
-      <class name="test.registrationTest">
+      <class name="test.openaccountTest">
         <methods>
-          <include name="invalidRegistration"/>
-          <include name="validRegistration"/>
+          <include name="verifyAccount"/>
+          <include name="openaccountmessage"/>
         </methods>
-      </class> <!-- test.registrationTest -->
+      </class> <!-- test.openaccountTest -->
+      <class name="test.TransferAmountTest">
+        <methods>
+          <include name="getWebDriver"/>
+        </methods>
+      </class> <!-- test.TransferAmountTest -->
+      <class name="com.testing.Parabank.Utils.ReadingExcel">
+        <methods>
+          <include name="closeWorkbook"/>
+        </methods>
+      </class> <!-- com.testing.Parabank.Utils.ReadingExcel -->
+      <class name="com.testing.Parabank.TestBase.DriverSetup">
+        <methods>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- com.testing.Parabank.TestBase.DriverSetup -->
+      <class name="com.testing.Parabank.ExtensionMethods.ExtendReport">
+        <methods>
+          <include name="flushReport"/>
+        </methods>
+      </class> <!-- com.testing.Parabank.ExtensionMethods.ExtendReport -->
     </classes>
-  </test> <!-- registration(failed) -->
+  </test> <!-- transfer(failed) -->
 </suite> <!-- Failed suite [Test] -->

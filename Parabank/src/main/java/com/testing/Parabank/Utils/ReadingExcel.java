@@ -7,15 +7,14 @@ import java.io.IOException;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 
 
 public class ReadingExcel {
 	
-	static XSSFWorkbook workbook;
-	static XSSFSheet sheet;
+	public static XSSFWorkbook workbook;
+	public static XSSFSheet sheet;
     
-    @BeforeSuite
+    
 	public static XSSFSheet getDataFromExcel()   {
    	 
 	try {	

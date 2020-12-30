@@ -1,5 +1,6 @@
 package com.testing.Parabank.ExtensionMethods;
 
+import org.testng.annotations.AfterTest;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
@@ -8,6 +9,7 @@ import com.testing.Parabank.Utils.DateUtils;
 public class ExtendReport {
 	public static ExtentReports report;
 	//Method for Extent Report
+	
 	public static ExtentReports getReportInstance(){
 		
 		if(report == null){
@@ -28,6 +30,11 @@ public class ExtendReport {
 		}
 		//Returning the report.
 		return report;
+	}
+	
+	@AfterTest
+	public static void flushReport() {
+		report.flush();
 	}
 
 }

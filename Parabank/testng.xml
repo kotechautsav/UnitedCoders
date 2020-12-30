@@ -1,8 +1,17 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Test">
-   <test name="transfer">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ParabankWebsiteTest">
+   <test name="FunctionalTesting">
       <classes>
+        <class name="com.testing.Parabank.TestBase.DriverSetup"/>
+        <class name="com.testing.Parabank.ExtensionMethods.ExtendReport"/>
+        <class name="com.testing.Parabank.Utils.ReadingExcel"/>
+        <class name="test.registrationTest"/>
+      	<class name="test.openaccountTest"/>
       	<class name="test.TransferAmountTest"/>
+      	<class name="test.paybillTest"/>
+      	<class name="test.updateinfoTest"/>
       </classes>
      </test>
+     
+     
 </suite>

@@ -14,12 +14,12 @@ public class PayBills {
 
 	public static String paybill() {
 
-		driver = DriverSetup.invokeDriver("FirefoxDriver_WindowsOS");
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		driver = DriverSetup.driver;//.invokeDriver("FirefoxDriver_WindowsOS");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		
-		driver.findElement(By.xpath("//input[@name=\"username\"]")).sendKeys("12");
-		driver.findElement(By.xpath("//input[@name=\"password\"]")).sendKeys("12");
-		driver.findElement(By.xpath("//input[@value=\"Log In\"]")).click();
+		//driver.findElement(By.xpath("//input[@name=\"username\"]")).sendKeys("12");
+		//driver.findElement(By.xpath("//input[@name=\"password\"]")).sendKeys("12");
+		//driver.findElement(By.xpath("//input[@value=\"Log In\"]")).click();
 		driver.findElement(By.linkText("Bill Pay")).click();
 		WebDriverWait Wait = new WebDriverWait(driver, 30);
 		
@@ -46,7 +46,7 @@ public class PayBills {
 	
 	public static String payeenameError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Bill Pay")).click();
 
 		WebDriverWait Wait = new WebDriverWait(driver, 30);
@@ -72,7 +72,7 @@ public class PayBills {
 	
 	public static String addressError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Bill Pay")).click();
 
 		WebDriverWait Wait = new WebDriverWait(driver, 30);
@@ -97,7 +97,7 @@ public class PayBills {
 	
 	public static String cityError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Bill Pay")).click();
 
 		WebDriverWait Wait = new WebDriverWait(driver, 30);
@@ -122,7 +122,7 @@ public class PayBills {
 	
 	public static String stateError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Bill Pay")).click();
 
 		WebDriverWait Wait = new WebDriverWait(driver, 30);
@@ -147,7 +147,7 @@ public class PayBills {
 	
 	public static String zipCodeError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Bill Pay")).click();
 
 		WebDriverWait Wait = new WebDriverWait(driver, 30);
@@ -172,7 +172,7 @@ public class PayBills {
 	
 	public static String withoutphoneNumberRegister() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Bill Pay")).click();
 
 		WebDriverWait Wait = new WebDriverWait(driver, 30);
@@ -199,7 +199,7 @@ public class PayBills {
 	
 	public static String accountNumberError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Bill Pay")).click();
 
 		WebDriverWait Wait = new WebDriverWait(driver, 30);
@@ -226,7 +226,7 @@ public class PayBills {
      public static String accountNumberMismatchError() {
 
 		
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Bill Pay")).click();
 
 		WebDriverWait Wait = new WebDriverWait(driver, 30);
@@ -251,7 +251,7 @@ public class PayBills {
 	
 	public static String verifyAccountError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Bill Pay")).click();
 
 		WebDriverWait Wait = new WebDriverWait(driver, 30);
@@ -276,7 +276,7 @@ public class PayBills {
 	
 	public static String amountError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		//driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		driver.findElement(By.linkText("Bill Pay")).click();
 
 		WebDriverWait Wait = new WebDriverWait(driver, 30);

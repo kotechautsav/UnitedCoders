@@ -15,14 +15,14 @@ public class UpdateInfo {
    
 	public static String update()  {
 
-		driver = DriverSetup.invokeDriver("FirefoxDriver_WindowsOS");
-		driver.get("https://parabank.parasoft.com/parabank/index.html");
+		driver = DriverSetup.driver;//.invokeDriver("FirefoxDriver_WindowsOS");
+		//driver.get("https://parabank.parasoft.com/parabank/index.html");
 
-		driver.findElement(By.name("username")).sendKeys("qqqqq");
-		driver.findElement(By.name("password")).sendKeys("q");
-		driver.findElement(By.xpath("//input[@value=\"Log In\"]")).click();
+		//driver.findElement(By.name("username")).sendKeys("qqqqq");
+		//driver.findElement(By.name("password")).sendKeys("q");
+		//driver.findElement(By.xpath("//input[@value=\"Log In\"]")).click();
 
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 		driver.findElement(By.xpath("//a[contains(text(),'Update Contact Info')]")).click();
 

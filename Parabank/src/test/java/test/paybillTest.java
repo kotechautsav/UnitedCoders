@@ -11,7 +11,7 @@ import com.testing.Parabank.Pages.PayBills;
 
 public class paybillTest {
 	
-	static ExtentReports report = ExtendReport.getReportInstance();
+	static ExtentReports report = ExtendReport.report;
 	static ExtentTest logger;
 
 	@Test(priority=1)

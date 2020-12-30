@@ -19,7 +19,7 @@ public class registrationTest extends Registration{
 	@Test(priority=1)
 	public static void validRegistration() {
 		
-		logger = report.createTest("Valid Registration");
+		logger = report.createTest("Registration is successful");
 
 		String success = Registration.register();
 		String noPhoneNumber = Registration.withoutPhonenumberRegister();
@@ -33,7 +33,7 @@ public class registrationTest extends Registration{
     @Test(priority=2)
 	public static void invalidRegistration() {
 
-    	logger = report.createTest("Invalid Registration");
+    	logger = report.createTest("Registration error messages.");
     	
 		String firstnameErr = Registration.firstnameError();
 		String lastnameErr = Registration.lastnameError();

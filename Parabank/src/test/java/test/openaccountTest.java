@@ -12,7 +12,7 @@ import com.testing.Parabank.Pages.OpenAccount;
 
 public class openaccountTest extends OpenAccount {
 
-	static ExtentReports report = ExtendReport.getReportInstance();
+	static ExtentReports report = ExtendReport.report;
 	static ExtentTest logger;
 
 	@Test(priority = 1)
@@ -32,7 +32,7 @@ public class openaccountTest extends OpenAccount {
 		logger = report.createTest("Verify Account");
 
 		String verify = OpenAccount.validateaccount();
-		Assert.assertEquals(verify, "account created");
+		Assert.assertEquals(verify, "Account created");
 		logger.log(Status.PASS, "New Account has been opened and verified");
 	}
 

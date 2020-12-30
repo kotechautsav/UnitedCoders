@@ -11,7 +11,7 @@ import com.aventstack.extentreports.Status;
 import com.testing.Parabank.ExtensionMethods.ExtendReport;
 
 public class updateinfoTest extends UpdateInfo {
-	static ExtentReports report = ExtendReport.getReportInstance();
+	static ExtentReports report = ExtendReport.report;
 	static ExtentTest logger;
 
 	@Test(priority = 1)
