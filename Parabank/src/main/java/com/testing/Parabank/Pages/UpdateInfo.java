@@ -2,39 +2,33 @@ package com.testing.Parabank.Pages;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
 
 import com.testing.Parabank.TestBase.DriverSetup;
+import com.testing.Parabank.Utils.ReadingExcel;
 
 public class UpdateInfo {
 	static WebDriver driver;
-   
+	static XSSFSheet sheet =ReadingExcel.getDataFromExcel();
+	
 	public static String update()  {
 
-		driver = DriverSetup.driver;//.invokeDriver("FirefoxDriver_WindowsOS");
-		//driver.get("https://parabank.parasoft.com/parabank/index.html");
-
-		//driver.findElement(By.name("username")).sendKeys("qqqqq");
-		//driver.findElement(By.name("password")).sendKeys("q");
-		//driver.findElement(By.xpath("//input[@value=\"Log In\"]")).click();
-
-		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver = DriverSetup.driver;
+		
 
 		driver.findElement(By.xpath("//a[contains(text(),'Update Contact Info')]")).click();
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys("Martin");
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys("Patel");
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys("Vesu");
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys("Surat");
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys("Gujarat");
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys("395007");
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys("987654321");
+		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(9).getCell(1).getStringCellValue());
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
@@ -59,12 +53,12 @@ public class UpdateInfo {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys("Patel");
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys("Vesu");
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys("Surat");
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys("Gujarat");
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys("395007");
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys("987654321");
+		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result1 = driver.findElement(By.xpath("//span[contains(text(),'First name is required.')]")).getText();
@@ -79,12 +73,12 @@ public class UpdateInfo {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys("Martin");
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys("Vesu");
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys("Surat");
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys("Gujarat");
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys("395007");
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys("987654321");
+		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result2 = driver.findElement(By.xpath("//span[contains(text(),'Last name is required.')]")).getText();
@@ -99,12 +93,12 @@ public class UpdateInfo {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys("Martin");
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys("Patel");
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys("Surat");
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys("Gujarat");
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys("395007");
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys("987654321");
+		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result3 = driver.findElement(By.xpath("//span[contains(text(),'Address is required.')]")).getText();
@@ -121,12 +115,12 @@ public class UpdateInfo {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys("Martin");
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys("Patel");
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys("Vesu");
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys("Gujarat");
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys("395007");
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys("987654321");
+		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result4 = driver.findElement(By.xpath("//span[contains(text(),'City is required.')]")).getText();
@@ -141,12 +135,12 @@ public class UpdateInfo {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys("Martin");
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys("Patel");
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys("Vesu");
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys("Surat");
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys("395007");
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys("987654321");
+		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result5 = driver.findElement(By.xpath("//span[contains(text(),'State is required.')]")).getText();
@@ -161,12 +155,12 @@ public class UpdateInfo {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys("Martin");
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys("Patel");
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys("Vesu");
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys("Surat");
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys("Gujarat");
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys("987654321");
+		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
+		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result6 = driver.findElement(By.xpath("//span[contains(text(),'Zip Code is required.')]")).getText();
